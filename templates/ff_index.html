@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Friends</title>
+    </head>
+    <body>
+        <h1>Friends</h1>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Occupation</th>
+            </tr>
+            {% for friend in friends: %}
+            <tr>
+                <td>{{ friend['first_name'] }}</td>
+                <td>{{ friend['last-name'] }}</td>
+                <td>{{ friend['occupation'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <h2>Add a Friend</h2>
+            <form action='/addFrnz' method='POST'>
+                <label for="name">First Name:<input type="text" name="f_name"></label><br>
+                <label for="age">Last Name<input type="text" name="l_name"></label><br>
+                <label for="age">Occupation<input type="text" name="occuptn"></label><br>
+                <input type="submit" value="Add">
+            </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+body {
+  background-color: #F2F3F4;
+}
+#wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+  background-color: #02A599;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  font: bold 18pt;
+  color:#6B90D7;
+}

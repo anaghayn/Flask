@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Email Validation with DB</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/style.css"> -->
+  </head>
+  <body>
+    <div id="wrapper">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+          <span id="{{ category }}">{{ message }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <h1>Email Addresses Entered:</h1>
+      <ul>
+        {% for email in emails: %}
+        <li>{{ email['email'] }}</li>
+        <li>{{ email['created_at']}}</li>
+        <li class="remove"><a href="/remove/{{ email['id'] }}">remove</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
